@@ -16,7 +16,7 @@ class Section5 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const AppText(text: "Covid-19 Prevention"),
+           AppText(text: "Covid-19 Prevention",fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,),
           const SizedBox(
             height: 20,
           ),
@@ -26,11 +26,11 @@ class Section5 extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: "COVID-19 ",
-                    style: textStyle,
+                    style: textStyle.copyWith(fontSize:  Responsive.isDesktop(context)?48:Responsive.isTablet(context)?36:24),
                   ),
                   TextSpan(
                     text: "Symptoms",
-                    style: textStyle.copyWith(color: AppColors.blue),
+                    style: textStyle.copyWith(color: AppColors.blue,fontSize:  Responsive.isDesktop(context)?48:Responsive.isTablet(context)?36:24),
                   ),
                 ],
               ),
@@ -46,13 +46,14 @@ class Section5 extends StatelessWidget {
                         "Adipiscing nec etiam tortor elit quisque. Arcu aliquet convallis aenean eu velit.\nMi vestibulum, ullamcorper venenatis imperdiet augue arcu donec neque.",
                     fontWeight: FontWeight.w500,
                     color: AppColors.white.withOpacity(.5),
+                    fontSize: 24,
                   )
                 : Text(
                     "Adipiscing nec etiam tortor elit quisque.\nArcu aliquet convallis aenean eu velit.\nMi vestibulum, ullamcorper venenatis imperdiet augue arcu \ndonec neque.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Montserrat',
-                      fontSize: 18,
+                      fontSize:  Responsive.isTablet(context)?18:12,
                       fontWeight: FontWeight.w500,
                       color: AppColors.white.withOpacity(.5),
                     ),

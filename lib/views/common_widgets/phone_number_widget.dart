@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_ui/utils/app_colors.dart';
+import 'package:responsive_ui/views/responsive.dart';
 
 class PhoneNumberWidget extends StatelessWidget {
   const PhoneNumberWidget({super.key});
@@ -43,7 +44,7 @@ class PhoneNumberWidget extends StatelessWidget {
                 hintStyle: TextStyle(
                   color: AppColors.black.withOpacity(.25),
                   fontFamily: 'Montserrat',
-                  fontSize: 24,
+                  fontSize: Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
                   fontWeight: FontWeight.w500,
                 ),
               ),

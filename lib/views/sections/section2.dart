@@ -22,8 +22,10 @@ class Section2 extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               alignment: Alignment.center,
               color: AppColors.textButtonColor.withOpacity(.05),
-              child: const AppText(
-                  text: "Check your COVID-19 result on our Database"),
+              child:  AppText(
+                  text: "Check your COVID-19 result on our Database",
+                  fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
+                  ),
             ),
             const SizedBox(
               height: 20,
@@ -33,11 +35,13 @@ class Section2 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       customTextfield(
+                        context: context,
                           text: "Okeowo", borderColor: AppColors.blue),
                       const SizedBox(
                         width: 10,
                       ),
                       customTextfield(
+                        context: context,
                           text: "NIK Number",
                           borderColor: AppColors.white.withOpacity(.5)),
                       const SizedBox(
@@ -57,8 +61,9 @@ class Section2 extends StatelessWidget {
                               backgroundColor:
                                   AppColors.textButtonColor.withOpacity(.1)),
                           onPressed: () {},
-                          child: const AppText(
+                          child:  AppText(
                             text: "Check",
+                            fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
                             color: AppColors.blue,
                           ),
                         ),
@@ -71,11 +76,13 @@ class Section2 extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         customTextfield(
+                          context: context,
                             text: "Okeowo", borderColor: AppColors.blue),
                         // const SizedBox(
                         //   width: 10,
                         // ),
                         customTextfield(
+                          context: context,
                             text: "NIK Number",
                             borderColor: AppColors.white.withOpacity(.5)),
                         // const SizedBox(
@@ -96,8 +103,9 @@ class Section2 extends StatelessWidget {
                                 backgroundColor:
                                     AppColors.textButtonColor.withOpacity(.1)),
                             onPressed: () {},
-                            child: const AppText(
+                            child:  AppText(
                               text: "Check",
+                              fontSize: Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
                               color: AppColors.blue,
                             ),
                           ),
@@ -117,17 +125,18 @@ class Section2 extends StatelessWidget {
                   borderRadius: const BorderRadius.all(
                     Radius.circular(10),
                   )),
-              child: const AppText(
+              child: AppText(
                 text:
                     "Need a certificate for your COVID-19 result? Please click here",
                 color: AppColors.blue,
+                fontSize: Responsive.isDesktop(context)?24:Responsive.isTablet(context)?14:10,
               ),
             ),
           ],
         ));
   }
 
-  Expanded customTextfield({required String text, required Color borderColor}) {
+  Expanded customTextfield({required String text, required Color borderColor,required BuildContext context}) {
     return Expanded(
       child: TextField(
         decoration: InputDecoration(
@@ -147,10 +156,10 @@ class Section2 extends StatelessWidget {
           ),
           fillColor: AppColors.textButtonColor.withOpacity(.1),
           hintText: text,
-          hintStyle: const TextStyle(
+          hintStyle:  TextStyle(
             color: AppColors.white,
             fontFamily: 'Montserrat',
-            fontSize: 24,
+            fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
             fontWeight: FontWeight.w500,
           ),
         ),

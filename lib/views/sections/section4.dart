@@ -16,7 +16,7 @@ class Section4 extends StatelessWidget {
     return Container(
       padding: mainPadding,
       color: AppColors.white,
-      child: Responsive.isDesktop(context)
+      child: Responsive.isDesktop(context)|| Responsive.isTablet(context)
           ? Row(
               children: [
                 Expanded(
@@ -28,16 +28,17 @@ class Section4 extends StatelessWidget {
                           text: Responsive.isTablet(context)
                               ? "Get your vaccine registration\ntoday"
                               : "Get your vaccine \nregistration today",
-                          fontSize: 48,
+                          fontSize: Responsive.isDesktop(context)?48:36,
                           color: AppColors.black,
                         ),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      const AppText(
+                       AppText(
                         text: "Patient’s Full Name",
                         color: AppColors.black,
+                       fontSize:  Responsive.isDesktop(context)?24:20,
                       ),
                       const SizedBox(
                         height: 10,
@@ -64,7 +65,7 @@ class Section4 extends StatelessWidget {
                           hintStyle: TextStyle(
                             color: AppColors.black.withOpacity(.25),
                             fontFamily: 'Montserrat',
-                            fontSize: 24,
+                            fontSize: Responsive.isDesktop(context)?24:20,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -72,9 +73,10 @@ class Section4 extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      const AppText(
+                       AppText(
                         text: "Mobile Number",
                         color: AppColors.black,
+                        fontSize: Responsive.isDesktop(context)?24:20,
                       ),
                       const SizedBox(
                         height: 20,
@@ -93,6 +95,7 @@ class Section4 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Expanded(child: PhoneNumberWidget()),
+                          SizedBox(width: 10,),
                           BlueButton(text: "Verify")
                         ],
                       ),
@@ -111,16 +114,16 @@ class Section4 extends StatelessWidget {
                         children: [
                           AppText(
                             text: "Already registered ?",
-                            fontSize: 20,
+                            fontSize:Responsive.isTablet(context)?14: 20,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black.withOpacity(.5),
                           ),
                           const SizedBox(
                             width: 20,
                           ),
-                          const AppText(
+                           AppText(
                             text: "Check your status",
-                            fontSize: 20,
+                            fontSize: Responsive.isTablet(context)?14:20,
                             color: AppColors.blue,
                           )
                         ],
@@ -150,7 +153,7 @@ class Section4 extends StatelessWidget {
                   children: [
                     const AppText(
                       text: "Get your vaccine \nregistration today",
-                      fontSize: 48,
+                      fontSize: 14,
                       color: AppColors.black,
                     ),
                     const SizedBox(
@@ -159,6 +162,7 @@ class Section4 extends StatelessWidget {
                     const AppText(
                       text: "Patient’s Full Name",
                       color: AppColors.black,
+                      fontSize: 14,
                     ),
                     const SizedBox(
                       height: 10,
@@ -184,7 +188,7 @@ class Section4 extends StatelessWidget {
                         hintStyle: TextStyle(
                           color: AppColors.black.withOpacity(.25),
                           fontFamily: 'Montserrat',
-                          fontSize: 24,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -195,6 +199,7 @@ class Section4 extends StatelessWidget {
                     const AppText(
                       text: "Mobile Number",
                       color: AppColors.black,
+                      fontSize: 14,
                     ),
                     const SizedBox(
                       height: 20,
@@ -204,28 +209,17 @@ class Section4 extends StatelessWidget {
                           "Notifications for appointment and reminders will be sent to this \nprovided number",
                       color: AppColors.black.withOpacity(.5),
                       fontWeight: FontWeight.w500,
-                      fontSize: 20,
+                      fontSize: 14,
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    Responsive.isTablet(context)
-                        ? const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(child: PhoneNumberWidget()),
-                              BlueButton(text: "Verify")
-                            ],
-                          )
-                        : ListView(
-                            shrinkWrap: true,
-                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              PhoneNumberWidget(),
-                              SizedBox(
-                                  width: 60, child: BlueButton(text: "Verify"))
-                            ],
-                          ),
+                   
+                       const PhoneNumberWidget(),
+                       const SizedBox(
+                      height: 20,
+                    ),
+                               const BlueButton(text: "Verify"),
                     const SizedBox(
                       height: 20,
                     ),

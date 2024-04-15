@@ -36,15 +36,15 @@ class Section3 extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const AppText(
+                       AppText(
                         text: "Why get vaccinated \ntoday?",
-                        fontSize: 47.9,
+                        fontSize: Responsive.isTablet(context)?36:24,
                       ),
                       AppText(
                         text:
                             "Magna adipiscing at elit at ornare lectus nibh lorem.\n Ac, sed ac lorem pellentesque vestibulum risus matti.\n In molestie condimentum malesuada non.",
                         fontWeight: FontWeight.w400,
-                        fontSize: 20,
+                        fontSize:  Responsive.isTablet(context)?20:14,
                         color: AppColors.white.withOpacity(.5),
                       ),
                     ],
@@ -99,15 +99,18 @@ class Section3 extends StatelessWidget {
                               height: 20,
                             ),
                             readMoreWidget(
+                              context: context,
                                 textColor: AppColors.blue,
                                 arrowColor: AppColors.blue),
                           ],
                         ),
                       ),
                       boxContainer(
+                        context: context,
                           icon: "asset/icons/Group 31 (1).svg",
                           text: "Minimize the spread \nof the Virus"),
                       boxContainer(
+                        context: context,
                           icon: "asset/icons/Group 31 (2).svg",
                           text: "Protect yourself")
                     ],
@@ -145,6 +148,7 @@ class Section3 extends StatelessWidget {
                                   text:
                                       "Protects your immune\n system against viruses",
                                   color: AppColors.blue,
+                                  fontSize: 24,
                                 ),
                                 const SizedBox(
                                   height: 20,
@@ -159,7 +163,9 @@ class Section3 extends StatelessWidget {
                                   height: 20,
                                 ),
                                 readMoreWidget(
+                                  context: context,
                                     textColor: AppColors.blue,
+                                
                                     arrowColor: AppColors.blue),
                               ],
                             ),
@@ -171,9 +177,11 @@ class Section3 extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               boxContainer(
+                                context: context,
                                   icon: "asset/icons/Group 31 (1).svg",
                                   text: "Minimize the spread \nof the Virus"),
                               boxContainer(
+                                context: context,
                                   icon: "asset/icons/Group 31 (2).svg",
                                   text: "Protect yourself")
                             ],
@@ -213,6 +221,7 @@ class Section3 extends StatelessWidget {
                                   text:
                                       "Protects your immune\n system against viruses",
                                   color: AppColors.blue,
+                                  fontSize: 14,
                                 ),
                                 const SizedBox(
                                   height: 20,
@@ -220,13 +229,14 @@ class Section3 extends StatelessWidget {
                                 const AppText(
                                   text:
                                       "Velit ut consectetur mauris, orci amet,\n faucibus. \nSit turpis fringilla ipsum pretium,\ndictum. Dolor eget vel nulla lorem ac.",
-                                  fontSize: 18,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w500,
                                 ),
                                 const SizedBox(
                                   height: 20,
                                 ),
                                 readMoreWidget(
+                                  context: context,
                                     textColor: AppColors.blue,
                                     arrowColor: AppColors.blue),
                               ],
@@ -236,12 +246,14 @@ class Section3 extends StatelessWidget {
                             height: 20,
                           ),
                           boxContainer(
+                            context: context,
                               icon: "asset/icons/Group 31 (1).svg",
                               text: "Minimize the spread \nof the Virus"),
                           const SizedBox(
                             height: 20,
                           ),
                           boxContainer(
+                            context: context,
                               icon: "asset/icons/Group 31 (2).svg",
                               text: "Protect yourself")
                         ],
@@ -251,12 +263,12 @@ class Section3 extends StatelessWidget {
   }
 
   Row readMoreWidget(
-      {required Color textColor, Color arrowColor = AppColors.white}) {
+      {required Color textColor, Color arrowColor = AppColors.white,required BuildContext context}) {
     return Row(
       children: [
         AppText(
           text: "Read More",
-          fontSize: 18,
+          fontSize: Responsive.isMobile(context)?12:18,
           color: textColor,
         ),
         const SizedBox(
@@ -270,7 +282,7 @@ class Section3 extends StatelessWidget {
     );
   }
 
-  Container boxContainer({required String icon, required String text}) {
+  Container boxContainer({required String icon, required String text,required BuildContext context}) {
     return Container(
       padding: const EdgeInsets.all(30),
       alignment: Alignment.center,
@@ -285,11 +297,12 @@ class Section3 extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          AppText(text: text),
+          AppText(text: text,fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,),
           const SizedBox(
             height: 20,
           ),
           readMoreWidget(
+            context: context,
               textColor: AppColors.white.withOpacity(.5),
               arrowColor: AppColors.white.withOpacity(.5)),
         ],

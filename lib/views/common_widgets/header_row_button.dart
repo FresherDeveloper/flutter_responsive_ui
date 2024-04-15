@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_ui/utils/app_colors.dart';
 import 'package:responsive_ui/views/common_widgets/app_text.dart';
+import 'package:responsive_ui/views/responsive.dart';
 
 class HeaderRowButton extends StatelessWidget {
   const HeaderRowButton({
@@ -19,8 +20,9 @@ class HeaderRowButton extends StatelessWidget {
               ),
               backgroundColor: AppColors.blue),
           onPressed: () {},
-          child: const AppText(
+          child:  AppText(
             text: "Get Vaccine",
+            fontSize: Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
           ),
         ),
         const SizedBox(
@@ -42,8 +44,9 @@ class HeaderRowButton extends StatelessWidget {
                 // ),
                 backgroundColor: AppColors.textButtonColor.withOpacity(.1)),
             onPressed: () {},
-            child: const AppText(
+            child:  AppText(
               text: "Help Centre",
+              fontSize: Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
             ),
           ),
         ),

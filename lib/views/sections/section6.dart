@@ -26,13 +26,14 @@ class Section6 extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const AppText(
+               AppText(
                 text: "FEEDBACK",
                 color: AppColors.blue,
+                fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
               ),
               Text(
                 "What our Patients Think",
-                style: textStyle.copyWith(color: AppColors.black),
+                style: textStyle.copyWith(color: AppColors.black,fontSize:  Responsive.isDesktop(context)?48:Responsive.isTablet(context)?36:24),
               ),
               Center(
                 child: AppText(
@@ -40,6 +41,7 @@ class Section6 extends StatelessWidget {
                       "Adipiscing nec etiam tortor elit quisque. Arcu aliquet convallis aenean eu velit.\n Mi vestibulum, ullamcorper venenatis imperdiet augue arcu donec neque.",
                   color: AppColors.black.withOpacity(.5),
                   fontWeight: FontWeight.w500,
+                  fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
                 ),
               ),
               const SizedBox(

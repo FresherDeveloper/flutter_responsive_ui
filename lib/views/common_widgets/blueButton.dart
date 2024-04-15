@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_ui/utils/app_colors.dart';
 import 'package:responsive_ui/views/common_widgets/app_text.dart';
+import 'package:responsive_ui/views/responsive.dart';
 
 class BlueButton extends StatelessWidget {
   const BlueButton({super.key, required this.text});
@@ -13,6 +14,7 @@ class BlueButton extends StatelessWidget {
       onPressed: () {},
       child: AppText(
         text: text,
+        fontSize:  Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
       ),
     );
   }

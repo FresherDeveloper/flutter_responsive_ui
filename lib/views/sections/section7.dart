@@ -32,7 +32,7 @@ class Section7 extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
               Container(
-                width: MediaQuery.of(context).size.width * .4,
+                width:Responsive.isMobile(context)?MediaQuery.of(context).size.width * .7: MediaQuery.of(context).size.width * .4,
                 height: MediaQuery.of(context).size.height * .08,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
@@ -55,7 +55,7 @@ class Section7 extends StatelessWidget {
                             hintStyle: TextStyle(
                               color: AppColors.black.withOpacity(.25),
                               fontFamily: 'Montserrat',
-                              fontSize: 20,
+                              fontSize:Responsive.isMobile(context)? 10:20,
                               fontWeight: FontWeight.w500,
                             ),
                             filled: true,
@@ -63,7 +63,7 @@ class Section7 extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * .05,
+                      width:Responsive.isMobile(context)?MediaQuery.of(context).size.width * .1: MediaQuery.of(context).size.width * .05,
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
                         color: AppColors.darkBlue,

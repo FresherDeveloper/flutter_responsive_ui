@@ -80,16 +80,19 @@ class Section1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       sectionBottomText(
+                        context: context,
                         image: "asset/icons/Group 6.svg",
                         text1: "Location",
                         text2: "Ikeja Lagos, Nigeria",
                       ),
                       sectionBottomText(
+                        context: context,
                         image: "asset/icons/Group 7.svg",
                         text1: "Date",
                         text2: "29 February, 2022",
                       ),
                       sectionBottomText(
+                        context: context,
                         image: "asset/icons/Group 9.svg",
                         text1: "Vaccine Type",
                         text2: "Mordena",
@@ -102,16 +105,19 @@ class Section1 extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           sectionBottomText(
+                            context: context,
                             image: "asset/icons/Group 6.svg",
                             text1: "Location",
                             text2: "Ikeja Lagos, Nigeria",
                           ),
                           sectionBottomText(
+                            context: context,
                             image: "asset/icons/Group 7.svg",
                             text1: "Date",
                             text2: "29 February, 2022",
                           ),
                           sectionBottomText(
+                            context: context,
                             image: "asset/icons/Group 9.svg",
                             text1: "Vaccine Type",
                             text2: "Mordena",
@@ -125,11 +131,13 @@ class Section1 extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               sectionBottomText(
+                                context: context,
                                 image: "asset/icons/Group 6.svg",
                                 text1: "Location",
                                 text2: "Ikeja Lagos, Nigeria",
                               ),
                               sectionBottomText(
+                                context: context,
                                 image: "asset/icons/Group 7.svg",
                                 text1: "Date",
                                 text2: "29 February, 2022",
@@ -140,6 +148,7 @@ class Section1 extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               sectionBottomText(
+                                context: context,
                                 image: "asset/icons/Group 9.svg",
                                 text1: "Vaccine Type",
                                 text2: "Mordena",
@@ -156,7 +165,7 @@ class Section1 extends StatelessWidget {
   }
 
   sectionBottomText(
-      {required String image, required String text1, required String text2}) {
+      {required String image, required String text1, required String text2,required BuildContext context}) {
     return Row(
       children: [
         SvgPicture.asset(
@@ -173,8 +182,9 @@ class Section1 extends StatelessWidget {
               text: text1,
               fontWeight: FontWeight.w600,
               color: AppColors.white.withOpacity(.5),
+              fontSize: Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,
             ),
-            AppText(text: text2),
+            AppText(text: text2,fontSize: Responsive.isDesktop(context)?24:Responsive.isTablet(context)?20:14,),
           ],
         ),
       ],
